@@ -1,0 +1,110 @@
+<meta charset="UTF-8" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>page Title</title>
+    <meta name=""viewport" content="width=devce-width, initial-scale=1">
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+      type="text/css"
+    />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#Date").datepicker({
+          dateFormat: "yy-mm-dd",
+          minDate: 0,
+          maxDate: "+5D",
+        });
+      });
+      $(function () {
+        $("#Date2").datepicker({
+          dateFormat: "yy-mm-dd",
+          minDate: 0,
+          maxDate: "+10D",
+        });
+      });
+    </script>
+    <style>
+      #container {
+        display: flex;
+      }
+      body {
+        width: 100%;
+        margin: 0;
+      }
+      nav,
+      header,
+      main,
+      footer {
+        border: 1px solid black;
+        width: 100%;
+      }
+
+      article {
+        height: 400px;
+      }
+      header {
+        height: 100px;
+      }
+
+      main {
+        display: flex;
+      }
+
+      article {
+        flex: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <input type="button" value="마이페이지" />
+      <input type="button" value="로그인" />
+    </header>
+
+    <section>
+      <article>
+        <div id="container">
+          <div>
+            <dt>지점 선택</dt>
+
+            <select name="지점 선택">
+              <option></option>
+              <option value="기장점">송송 펜션 기장점</option>
+              <option value="거제점">송송 펜션 거제도점</option>
+            </select>
+          </div>
+
+          <div>
+            <dt>체크인¸</dt>
+            <dd>
+              <input type="text" id="Date" value="체크인 날짜 설정" />
+            </dd>
+          </div>
+          <div>
+            <dt>체크아웃</dt>
+            <dd>
+              <input type="text" id="Date2" value="체크아웃 날짜 설정" />
+            </dd>
+          </div>
+          <div>
+            <dt>인원</dt>
+            <div display="flex">
+              <input type="button" value="-" />
+              <input type="text" value="0" />
+              <input type="button" value="+" />
+            </div>
+          </div>
+          <input type="button" value="검색" />
+        </div>
+      </article>
+    </section>
+
+    <footer></footer>
+  </body>
+</html>
